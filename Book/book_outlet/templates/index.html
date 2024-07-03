@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 style="text-align: center;">Book list of this Project</h1>
+  <ul>
+    {% for book in books %} 
+       <li><a href="{{book.get_absolute_url}}">{{book.title}}</a> (rating : <b>{{book.rating}}</b> out of 5)</li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+  <p> Total Number of books: {{total_number_of_books}}</p>
+  <p>Average rating: {{average_rating.rating__avg}}</p>
+{% endblock content %}
